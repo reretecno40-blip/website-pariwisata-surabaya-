@@ -1,0 +1,184 @@
+    header {
+    width: 1920px;
+    height: 1080px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* SLIDESHOW BACKGROUND */
+.slideshow {
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-size: cover;
+    background-position: center;
+    animation: slideShow 12s infinite;
+}
+
+/* GAMBAR TEKS / LAYER ATAS */
+.header-content {
+    position: absolute;
+    z-index: 3;
+    top: 55%; /* atur posisi */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+/* UKURAN GAMBAR TEKS */
+.text-image {
+    width: 1920px;  		/* ubah sesuai kebutuhan */
+    max-width: auto;
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.5)); /* biar nge-pop */
+}
+
+/* OVERLAY (opsional biar teks jelas) */
+header::after {
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index: 2;
+}
+
+/* ANIMASI GANTI GAMBAR */
+@keyframes slideShow {
+    0%  { background-image: url('g1.png'); }
+    33% { background-image: url('g2.png'); }
+    66% { background-image: url('g3.png'); }
+    100%{ background-image: url('g1.png'); }
+}
+
+
+   body {
+    margin: 0;
+    background: #08244d;
+    font-family: sans-serif;
+    font-size: 30px;
+    }
+
+    .marquee-container {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+        
+    }
+
+    .marquee-track {
+        display: flex;
+        width: max-content;
+        animation: scrollLeft 35s linear infinite;
+        gap: 30px;
+    }
+
+    /* Berhenti saat hover */
+    .marquee-container:hover .marquee-track {
+        animation-play-state: paused;
+    }
+
+    /* CARD STYLE */
+    .item {
+        width: 500px;
+        overflow: hidden;
+        cursor: pointer;
+        text-decoration: none;
+        color: #333;
+        transition: 0.3s;
+        flex-shrink: 0;
+	    background: transparent !important;
+    }
+
+    .item:hover {
+        transform: translateY(-15px);
+		background: transparent !important;
+   
+    }
+
+    .item img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        display: block;
+    }
+.item:focus, 
+.item:active {
+    background: transparent !important;
+}
+
+
+
+    @keyframes scrollLeft {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+    }
+
+footer {
+    background: #dedede;
+    color: #08244d;
+    padding: 30px 60px;
+    font-family: sans-serif;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    padding-bottom: 20px;
+}
+
+.footer-logo {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.footer-logo span {
+    color: #08244d; 
+}
+
+/* Menu */
+.footer-menu {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+}
+
+.footer-menu li a {
+    text-decoration: none;
+    color: #08244d;
+    font-size: 25px;
+    transition: 0.3s;
+}
+
+.footer-menu li a:hover {
+    color: #08244d;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: center;   /* tadinya space-between */
+    align-items: center;
+    margin-top: 25px;
+}
+
+
+.footer-links a {
+    text-decoration: none;
+    color: #08244d;
+    margin: 0 15px;
+}
+
+.footer-links a:hover {
+    color: #08244d;
+    font-size: 25px;
+}
+
+/* Sosial Media Icon */
+.footer-social a img {
+    width: 28px;
+    margin-left: 10px;
+}
